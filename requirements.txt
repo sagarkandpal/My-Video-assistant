@@ -1,0 +1,47 @@
+# ============================================================
+# AI Meeting Assistant - Requirements
+# ============================================================
+
+# ── Audio & YouTube ─────────────────────────────────────────
+yt-dlp>=2024.3.10               # YouTube audio download
+pydub>=0.25.1                   # Audio file manipulation
+ffmpeg-python>=0.2.0            # FFmpeg bindings (ffmpeg binary required separately)
+
+# ── Transcription (Local Whisper) ───────────────────────────
+openai-whisper>=20231117        # Local Whisper ASR
+torch>=2.2.0                    # Required by Whisper (CPU/GPU)
+torchaudio>=2.2.0               # Audio tensor utilities for Whisper
+
+# ── Translation (Hindi → English) ───────────────────────────
+deep-translator>=1.11.4         # Lightweight translation wrapper (Google Translate backend)
+langdetect>=1.0.9               # Language detection before translation
+
+# ── LangChain LCEL + Mistral ─────────────────────────────────
+langchain>=0.2.0
+langchain-core>=0.2.0
+langchain-community>=0.2.0
+langchain-mistralai>=0.1.8      # Mistral chat model integration
+mistralai>=0.4.0                # Mistral API client
+
+# ── RAG Pipeline ─────────────────────────────────────────────
+chromadb>=0.5.0                 # Vector store
+sentence-transformers>=3.0.0    # HuggingFace embeddings (e.g. all-MiniLM-L6-v2)
+langchain-huggingface>=0.0.3    # HuggingFaceEmbeddings wrapper for LangChain
+huggingface-hub>=0.23.0         # Model downloads from HF Hub
+tokenizers>=0.19.0              # Fast tokenization
+
+# ── Streamlit UI ─────────────────────────────────────────────
+streamlit>=1.35.0
+streamlit-extras>=0.4.2         # Optional quality-of-life Streamlit components
+watchdog>=4.0.0                 # Faster Streamlit file watching
+
+# ── PDF & Text Export ────────────────────────────────────────
+fpdf2>=2.7.9                    # PDF generation (pure Python, no system deps)
+reportlab>=4.2.0                # Alternative PDF engine (richer layout support)
+
+# ── Utilities ────────────────────────────────────────────────
+python-dotenv>=1.0.0            # Load .env for API keys
+numpy>=1.26.0                   # Array ops (Whisper / embeddings dependency)
+tiktoken>=0.7.0                 # Token counting for context management
+tqdm>=4.66.0                    # Progress bars
+requests>=2.31.0                # HTTP calls
